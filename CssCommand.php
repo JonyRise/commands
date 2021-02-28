@@ -39,7 +39,7 @@ class CssCommand extends CConsoleCommand
       echo "Файл $name_new_file был создан ранее, перезаписать?";
       $command = readline("[Y/N]");
 
-      if ($command == 'Y' || $command == 'y') {
+      if ((in_array($command, ['Y','y']))) {
 
         $this->writeInFile($root . $path_new_file, $text);
         echo "Перезаписано!";
