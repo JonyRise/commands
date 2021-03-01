@@ -29,7 +29,7 @@ class CssCommand extends CConsoleCommand
     $name_new_file = $name_new_file[0];
 
     // Определяем папку, в которой лежат файлы и создаем масив с файлами в этой папке
-    $folder = $root . str_replace($name_new_file, "", $path_new_file);
+    
     
     // Проверяем был ли создан файл ранее 
     if (is_file($root . $path_new_file)) {
@@ -48,7 +48,7 @@ class CssCommand extends CConsoleCommand
     } else {
 
       $this->writeInFile($root . $path_new_file, $text);
-      echo "Файл создан!$path_new_file";
+      echo "Файл создан!";
     }
   }
 
