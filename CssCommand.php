@@ -23,7 +23,7 @@ class CssCommand extends CConsoleCommand
     $text = preg_replace('~\s{2,}~', " ", $text);
 
     // Создаем путь к новому файлу
-    $path_new_file = preg_replace('~\..{0,}~', "_min.css", $path);
+    $path_new_file = preg_replace('~\..{0,}~', ".min.css", $path);
     // Создаем имя нового файла на основе пути к нему
     preg_match('~[\w.\-_]{1,}\..{0,}~', $path_new_file, $name_new_file);
     $name_new_file = $name_new_file[0];
