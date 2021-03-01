@@ -30,11 +30,9 @@ class CssCommand extends CConsoleCommand
 
     // Определяем папку, в которой лежат файлы и создаем масив с файлами в этой папке
     $folder = $root . str_replace($name_new_file, "", $path_new_file);
-    $folder_files = scandir($folder);
-
-
+    
     // Проверяем был ли создан файл ранее 
-    if (in_array($name_new_file, $folder_files)) {
+    if (is_file($root . $path_new_file)) {
 
       echo "Файл $name_new_file был создан ранее, перезаписать?";
       $command = readline("[Y/N]");
@@ -42,7 +40,7 @@ class CssCommand extends CConsoleCommand
       if ((in_array($command, ['Y','y']))) {
 
         $this->writeInFile($root . $path_new_file, $text);
-        echo "Перезаписано!";
+        echo "Перезаписано! ";
       } else {
 
         echo "Отменено";
@@ -50,7 +48,7 @@ class CssCommand extends CConsoleCommand
     } else {
 
       $this->writeInFile($root . $path_new_file, $text);
-      echo "Файл создан!";
+      echo "Файл создан!$path_new_file";
     }
   }
 
