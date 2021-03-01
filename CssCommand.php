@@ -19,7 +19,7 @@ class CssCommand extends CConsoleCommand
     $text = preg_replace('~/\*.{1,}\*/~', "", $text);
 
     // Убираем переносы на следующую строку, табуляцию и избыточные пробелы
-    $text = str_replace(["\n", "\t"], "", $text);
+    //$text = str_replace(["\n", "\t"], "", $text);
     $text = preg_replace('~\s{2,}~', " ", $text);
 
     // Создаем путь к новому файлу
